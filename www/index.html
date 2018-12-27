@@ -158,9 +158,9 @@
     
     // ボタンの初期設定
     function init(){
-        $('#btnA').prop('disabled', false);
-        $('#btnB').prop('disabled', false);
-        $('#btnC').prop('disabled', false);
+        // $('#btnA').prop('disabled', false);
+        // $('#btnB').prop('disabled', false);
+        // $('#btnC').prop('disabled', false);
         
     }
     
@@ -205,7 +205,7 @@
         $("#time").html("経過時間："+parseInt(time));
       }
         var rest = period - parseInt(time);
-        $("#remain").html("残り時間："+rest);
+        // $("#remain").html("残り時間："+rest);
         analog(rest); 
         if(rest <= 0){
           active = false;
@@ -222,9 +222,9 @@
 
     <div id="remain">Remaining time</div>
     <div id="time">Time</div>
-    <button id="btnA">ButtonA</button>  
-    <button id="btnB">ButtonB</button>  
-    <button id="btnC">ButtonC</button>  
+    <button id="btnA">3minutes</button>  
+    <button id="btnB">5minutes</button>  
+    <button id="btnC">reset</button>  
     <input type="number" id="minute" value=3 >
     <input type="number" id="second" value=0 >
 </body>
