@@ -192,7 +192,7 @@
     }
     active = false;
     period = 60*parseInt($("#minute").val()) + parseInt($("#second").val());
-    $("#remain").html("残り時間："+rest);
+    //$("#remain").html("残り時間："+rest);
     $("#time").html("残り時間：0")
   
  
@@ -209,13 +209,15 @@
         var time =(currentTime - startTime)/1000;
         $("#time").html("残り時間："+(300 -parseInt(time))+"秒");
       }
-        var rest = period - parseInt(time);
+       // var rest = period - parseInt(time);
         // $("#remain").html("残り時間："+rest);
-        analog(rest); 
-        if(rest <= 0){
+        //analog(rest); 
+        if(parseInt(time) >= 180 && active3 == true){
           active3 = false;
+        }
+        if(parseInt(time) >= 300 && active5 == true){
           active5 = false;
-        }       
+        }              
     } 
   </script>
 </head>
