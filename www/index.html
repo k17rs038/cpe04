@@ -154,6 +154,7 @@
     var active5 = false;
     var startTime = 0;
     var period = 0;
+    var sound = false;
     
     // ボタンの初期設定
     function init(){
@@ -214,10 +215,26 @@
         //analog(rest); 
         if(parseInt(time) >= 180 && active3 == true){
           active3 = false;
+          sound = true;
         }
         if(parseInt(time) >= 300 && active5 == true){
           active5 = false;
-        }              
+          sound = true;
+        }         
+        if(sound == true){
+           var canvas = $("#mycanvas")[0];
+        var ctx = canvas.getContext("2d");
+        var img = new Image();
+        img.src = "ksuisbg.gif";
+        img.onload = function(){
+          ctx.drawImage(img,0,0,300,300);
+        }
+        sound = false;
+      var audio = new Audio();
+      audio.src = "pin.wav";
+      audio.play();
+
+        }     
     } 
   </script>
 </head>
