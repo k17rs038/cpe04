@@ -154,6 +154,7 @@
     var active5 = false;
     var startTime = 0;
     var period = 0;
+    var Minute = 0;
     var sound = false;
     
     // ボタンの初期設定
@@ -180,15 +181,27 @@
 
     // ButtonCがクリックされた時の処理
     function btnCClick(e){
+      active3 = false;
+      active5 = false;
     }
         
     // 繰り返し実行する処理
     function timer(){ 
       if(active3 == true){
+        Minute = 3;
+
         var currentTime = new Date();
         var time =(currentTime - startTime)/1000;
-        $("#time").html("残り時間："+(180 -parseInt(time))+"秒");
+        $("#time").html("残り時間："+Minute+"分"+ (0 - parseInt(time))+"秒");
       }
+      // if(Minute <= 0 && time < 0){
+      //   Minute -= 1;
+      //   var time = 59 - parseInt(time);
+      // }else{
+      //   active3 = false;
+      // }
+
+      
 
       if(active5 == true){
         var currentTime = new Date();
@@ -231,7 +244,8 @@
     <div id="time">Time</div>
     <button id="btnA">3minutes</button>  
     <button id="btnB">5minutes</button>  
-    <button id="btnC">stop</button>  
+    <button id="btnC">stop</button>
+
     <input type="number" id="minute" value=3 >
     <input type="number" id="second" value=0 >
 </body>
