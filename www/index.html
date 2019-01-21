@@ -38,6 +38,9 @@
         $('#btnC').click(function(e) {
             btnCClick(e);
         });
+        $('#btnD').click(function(e) {
+            btnDClick(e);
+        });
         init();
     });
     
@@ -181,8 +184,14 @@
 
     // ButtonCがクリックされた時の処理
     function btnCClick(e){
+      if(active3 == true){
       active3 = false;
-      active5 = false;
+      }
+    }
+    // ButtonDがクリックされた時の処理
+    function btnDClick(e){
+      $("#time").html("残り時間："+ 0 +"分"+ 0 +"秒");
+      active3 = false;
     }
         
     // 繰り返し実行する処理
@@ -245,6 +254,7 @@
     <button id="btnA">3minutes</button>  
     <button id="btnB">5minutes</button>  
     <button id="btnC">stop</button>
+    <button id="btnD">reset</button>
 
     <input type="number" id="minute" value=3 >
     <input type="number" id="second" value=0 >
