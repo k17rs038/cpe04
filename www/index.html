@@ -180,23 +180,8 @@
 
     // ButtonCがクリックされた時の処理
     function btnCClick(e){
-        var canvas = $("#mycanvas")[0];
-        var ctx = canvas.getContext("2d");
-        var img = new Image();
-        img.src = "ksuisbg.gif";
-        img.onload = function(){
-          ctx.drawImage(img,0,0,300,300);
-        }
-      var audio = new Audio();
-      audio.src = "pin.wav";
-      audio.play();
     }
-    active = false;
-    period = 60*parseInt($("#minute").val()) + parseInt($("#second").val());
-    //$("#remain").html("残り時間："+rest);
-    $("#time").html("残り時間：0")
-  
- 
+        
     // 繰り返し実行する処理
     function timer(){ 
       if(active3 == true){
@@ -210,9 +195,7 @@
         var time =(currentTime - startTime)/1000;
         $("#time").html("残り時間："+(300 -parseInt(time))+"秒");
       }
-       // var rest = period - parseInt(time);
-        // $("#remain").html("残り時間："+rest);
-        //analog(rest); 
+      //残り時間が0秒を指したときの処理
         if(parseInt(time) >= 180 && active3 == true){
           active3 = false;
           sound = true;
@@ -248,7 +231,7 @@
     <div id="time">Time</div>
     <button id="btnA">3minutes</button>  
     <button id="btnB">5minutes</button>  
-    <button id="btnC">reset</button>  
+    <button id="btnC">stop</button>  
     <input type="number" id="minute" value=3 >
     <input type="number" id="second" value=0 >
 </body>
