@@ -41,17 +41,21 @@
     
     #btnA {
         font-size: 20px;
-        position:absolute; top:380px; left:2%; width:30%; height:60px; 
+        position:absolute; top:380px; left:2%; width:48%; height:60px; 
     }
     
     #btnB {
         font-size: 20px;
-        position:absolute; top:380px; left:32%; width:30%; height:60px; 
+        position:absolute; top:380px; left:50%; width:48%; height:60px; 
     }
 
     #btnC {
         font-size: 20px;
-        position:absolute; top:380px; left:62%; width:30%; height:60px; 
+        position:absolute; top:440px; left:2%; width:48%; height:60px; 
+    }
+    #btnD {
+        font-size: 20px;
+        position:absolute; top:440px; left:50%; width:48%; height:60px; 
     }
     
     /* #minute {
